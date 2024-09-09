@@ -1,0 +1,149 @@
+version: "3.1"
+
+intents:
+  - greet
+  - chitchat
+
+actions:
+  - action_categorize_mobility
+  - action_fill_mobility_messages
+  - action_categorize_selfcare
+  - action_categorize_activity
+  - action_categorize_pain
+  - action_categorize_anxiety
+
+slots:
+  mobility:
+    type: text
+
+  follow_up_mobility:
+    type: text
+
+  mobility_level:
+    type: float
+
+  mobility_confidence:
+    type: bool
+
+  mobility_messages:
+    type: list
+
+  follow_up_question:
+    type: text
+
+  selfcare:
+    type: text
+
+  follow_up_selfcare:
+    type: text
+
+  selfcare_level:
+    type: float
+
+  selfcare_confidence:
+    type: bool
+  
+  selfcare_messages:
+    type: list
+
+  activity:
+    type: text
+
+  follow_up_activity:
+    type: text
+
+  activity_level:
+    type: float
+
+  activity_confidence:
+    type: bool
+  
+  activity_messages:
+    type: list
+
+  pain:
+    type: text
+
+  follow_up_pain:
+    type: text
+
+  pain_level:
+    type: float
+
+  pain_confidence:
+    type: bool
+  
+  pain_messages:
+    type: list
+
+  anxiety:
+    type: text
+
+  follow_up_anxiety:
+    type: text
+
+  anxiety_level:
+    type: float
+
+  anxiety_confidence:
+    type: bool
+  
+  anxiety_messages:
+    type: list
+
+  healthlevel:
+    type: text
+
+# forms:
+#   questionnaire_form:
+#     required_slots:
+#       - mobility:
+#         type: from_text
+      
+
+responses:
+  utter_greet:
+    - text: "Hallo, hoe kan ik je helpen?"
+    
+  utter_free_chitchat_response:
+    - text: "Ik ben hier om met u te chatten. Hoe kan ik u assisteren?"
+    - text: "Voel je vrij om me alles te vragen. Hoe kan ik u helpen?"
+
+  utter_ask_mobility:
+    - text: "Hoe is je mobiliteit vandaag?"
+
+  utter_ask_follow_up_mobility:
+    - text: "{follow_up_question}"
+
+  utter_ask_selfcare:
+    - text: "Hoe gaat het met uw zelfzorg vandaag? (jezelf wassen en aankleden bijvoorbeeld)"
+
+  utter_ask_follow_up_selfcare:
+    - text: "{follow_up_question}"
+
+  utter_ask_activity:
+    - text: "Hoeveel problemen ervaart u met dagelijkse activiteiten zoals, werk, studie, huishouden, gezins- of vrijetijdsactiviteiten?"
+
+  utter_ask_follow_up_activity:
+    - text: "{follow_up_question}"
+
+  utter_ask_pain:
+    - text: "Hoeveel pijn of ongemak voelt u?"
+
+  utter_ask_follow_up_pain:
+    - text: "{follow_up_question}"
+
+  utter_ask_anxiety:
+    - text: "Hoe angstig of somber voelt u zich"
+
+  utter_ask_follow_up_anxiety:
+    - text: "{follow_up_question}"
+
+  utter_ask_healthlevel:
+    - text: "Nu wil ik aan u vragen of u kunt aangeven hoe goed of slecht uw gezondheid VANDAAG is. 
+            Neem in gedachten een verticale lijn die van 0 tot 100 loopt.
+            Bovenaan de lijn staat 100, voor de beste gezondheid die u zich kunt voorstellen. Onderaan de lijn staat 0, voor de slechtste gezondheid die u zich kunt voorstellen.
+            Zeg me nu op welk punt van deze lijn u uw gezondheid VANDAAG zou zetten."
+    
+  utter_thankyou:
+    - text: "Bedankt voor uw tijd en antwoorden."

@@ -1,0 +1,13 @@
+recipe: default.v1
+language: nl
+pipeline:
+- name: LLMCommandGenerator
+  llm:
+    model_name: "gpt-3.5-turbo"
+
+policies:
+- name: FlowPolicy
+# - name: EnterpriseSearchPolicy
+# - name: RulePolicy
+- name: IntentlessPolicy
+assistant_id: 20240609-162754-exothermic-sycamore
