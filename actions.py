@@ -137,10 +137,10 @@ class ActionCategorizeSelfcare(Action):
         {chat_history}
 
         Categorizeer de zelfzorg van de gebruiker in 1 van deze categorieën:
-        1. Ik heb geen problemen mezelf wassen en aankleden
-        2. Ik heb een beetje problemen mezelf wassen en aankleden
-        3. Ik heb matige problemen met mezelf wassen en aankleden
-        4. Ik heb ernstige problemen met mezelf wassen en aankleden
+        1. Ik heb geen problemen mezelf te wassen en aan te kleden
+        2. Ik heb een beetje problemen mezelf te wassen en aan te kleden
+        3. Ik heb matige problemen met mezelf te wassen en aan te kleden
+        4. Ik heb ernstige problemen met mezelf te wassen en aan te kleden
         5. Ik ben niet in staat om mezelf te wassen en aan te kleden
 
         Antwoord alleen met het getal van de categorie en niks anders.
@@ -179,10 +179,10 @@ class ActionCategorizeSelfcare(Action):
                 empatische manier. Stel aan de hand van het gevoerde gesprek een gerichte vervolgvraag om meer informatie 
                 over de zelfzorg van de gebruiker te krijgen, zodat het beter gecategoriseerd kan worden in 1 van de volgende categorieën: 
 
-                1. Ik heb geen problemen mezelf wassen en aankleden
-                2. Ik heb een beetje problemen mezelf wassen en aankleden
-                3. Ik heb matige problemen met mezelf wassen en aankleden
-                4. Ik heb ernstige problemen met mezelf wassen en aankleden
+                1. Ik heb geen problemen mezelf te wassen en aan te kleden
+                2. Ik heb een beetje problemen mezelf te wassen en aan te kleden
+                3. Ik heb matige problemen met mezelf te wassen en aan te kleden
+                4. Ik heb ernstige problemen met mezelf te wassen en aan te kleden
                 5. Ik ben niet in staat om mezelf te wassen en aan te kleden
 
                 Geef antwoord zonder "Bot:" ervoor te zetten.
