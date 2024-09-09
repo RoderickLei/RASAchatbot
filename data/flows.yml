@@ -1,0 +1,56 @@
+flows:
+  Administer_EQ5D:
+    description: Deze flow neemt de EQ-5D vragenlijst af en verzamelt alle antwoorden van de patienten.
+    steps:
+      - collect: mobility
+      - id: "collect_mobility_level"
+        action: action_categorize_mobility
+        next:
+          - if: slots.mobility_confidence
+            then: "collect_selfcare"
+          - else:
+            - collect: follow_up_mobility
+              next: "collect_mobility_level"
+      - id: "collect_selfcare"
+        collect: selfcare
+      - id: "collect_selfcare_level"
+        action: action_categorize_selfcare
+        next:
+          - if: slots.selfcare_confidence
+            then: "collect_activity"
+          - else:
+            - collect: follow_up_selfcare
+              next: "collect_selfcare_level"
+      - id: "collect_activity"
+        collect: activity
+      - id: "collect_activity_level"
+        action: action_categorize_activity
+        next:
+          - if: slots.activity_confidence
+            then: "collect_pain"
+          - else:
+            - collect: follow_up_activity
+              next: "collect_activity_level"
+      - id: "collect_pain"
+        collect: pain
+      - id: "collect_pain_level"
+        action: action_categorize_pain
+        next:
+          - if: slots.pain_confidence
+            then: "collect_anxiety"
+          - else:
+            - collect: follow_up_pain
+              next: "collect_pain_level"
+      - id: "collect_anxiety"
+        collect: anxiety
+      - id: "collect_anxiety_level"
+        action: action_categorize_anxiety
+        next:
+          - if: slots.anxiety_confidence
+            then: "collect_healthlevel"
+          - else:
+            - collect: follow_up_anxiety
+              next: "collect_anxiety_level"
+      - id: "collect_healthlevel"
+        collect: healthlevel
+      - action: utter_thankyou
